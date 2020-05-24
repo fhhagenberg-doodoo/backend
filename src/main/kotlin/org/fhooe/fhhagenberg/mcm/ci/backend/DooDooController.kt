@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*
 import java.net.URI
 
 @RestController
-@RequestMapping("/doodoo")
+@RequestMapping("/doodoos")
 class DooDooController {
 
     @GetMapping()

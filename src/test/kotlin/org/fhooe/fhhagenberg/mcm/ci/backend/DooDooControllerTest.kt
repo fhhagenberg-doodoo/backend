@@ -22,7 +22,7 @@ class DooDooControllerTest {
     fun `get all endpoint returns 200 OK`() {
         webTestClient!!
                 .get()
-                .uri("/doodoo")
+                .uri("/doodoos")
                 .exchange()
                 .expectStatus()
                 .isOk
@@ -32,7 +32,7 @@ class DooDooControllerTest {
     fun `get find one endpoint returns 200 OK`() {
         webTestClient!!
                 .get()
-                .uri("/doodoo/id")
+                .uri("/doodoos/id")
                 .exchange()
                 .expectStatus()
                 .isOk
@@ -43,7 +43,7 @@ class DooDooControllerTest {
 
         webTestClient!!
                 .put()
-                .uri("/doodoo")
+                .uri("/doodoos")
                 .bodyValue(doodoo)
                 .exchange()
                 .expectStatus()
@@ -54,7 +54,7 @@ class DooDooControllerTest {
     fun `delete endpoint returns 200 OK`() {
         webTestClient!!
                 .delete()
-                .uri("/doodoo/id")
+                .uri("/doodoos/id")
                 .exchange()
                 .expectStatus()
                 .isOk
@@ -64,7 +64,7 @@ class DooDooControllerTest {
     fun `post (create) endpoint returns 200 OK`() {
         webTestClient!!
                 .post()
-                .uri("/doodoo")
+                .uri("/doodoos")
                 .bodyValue(doodoo)
                 .exchange()
                 .expectStatus()
@@ -75,7 +75,7 @@ class DooDooControllerTest {
     fun `put (set done) endpoint returns 200 OK`() {
         webTestClient!!
                 .put()
-                .uri("/doodoo/id/done")
+                .uri("/doodoos/id/done")
                 .exchange()
                 .expectStatus()
                 .isOk
