@@ -1,9 +1,9 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend.data
 
-import java.sql.Timestamp
-import java.util.*
+import java.util.Date
 
 class DooDoo(
+        val id: String?,
         val name: String,
         val description: String,
         val dueDate: Date,
