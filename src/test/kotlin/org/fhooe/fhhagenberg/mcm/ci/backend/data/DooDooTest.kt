@@ -15,7 +15,6 @@ class DooDooTest {
     @Test
     fun `isDone-property returning false`() {
         val doodoo = DooDoo("test1", "test2", Date(), null, 1)
-
         assertFalse(doodoo.isDone)
     }
 
