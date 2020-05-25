@@ -14,13 +14,13 @@ import java.util.Date
 class DooDooControllerTest {
 
     @Autowired
-    private val webTestClient: WebTestClient? = null
+    private lateinit var webTestClient: WebTestClient
 
     private val doodoo = DooDoo("id", "testname", "test-description", Date(), null, 1)
 
     @Test
     fun `find all (get) endpoint returns 200 OK`() {
-        webTestClient!!
+        webTestClient
                 .get()
                 .uri("/doodoos")
                 .exchange()
@@ -30,7 +30,7 @@ class DooDooControllerTest {
 
     @Test
     fun `find (get) one endpoint returns 200 OK`() {
-        webTestClient!!
+        webTestClient
                 .get()
                 .uri("/doodoos/id")
                 .exchange()
@@ -40,8 +40,7 @@ class DooDooControllerTest {
 
     @Test
     fun `put (update) endpoint returns 200 OK`() {
-
-        webTestClient!!
+        webTestClient
                 .put()
                 .uri("/doodoos")
                 .bodyValue(doodoo)
@@ -52,7 +51,7 @@ class DooDooControllerTest {
 
     @Test
     fun `delete endpoint returns 200 OK`() {
-        webTestClient!!
+        webTestClient
                 .delete()
                 .uri("/doodoos/id")
                 .exchange()
@@ -62,7 +61,7 @@ class DooDooControllerTest {
 
     @Test
     fun `post (create) endpoint returns 200 OK`() {
-        webTestClient!!
+        webTestClient
                 .post()
                 .uri("/doodoos")
                 .bodyValue(doodoo)
@@ -73,7 +72,7 @@ class DooDooControllerTest {
 
     @Test
     fun `put (set done) endpoint returns 200 OK`() {
-        webTestClient!!
+        webTestClient
                 .put()
                 .uri("/doodoos/id/done")
                 .exchange()

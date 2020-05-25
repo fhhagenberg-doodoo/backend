@@ -10,6 +10,6 @@ data class DooDoo(
         val name: String,
         val description: String,
         val dueDate: Date,
-        val doneSince: Date?,
+        var doneSince: Date?,
         val priority: Int
 )

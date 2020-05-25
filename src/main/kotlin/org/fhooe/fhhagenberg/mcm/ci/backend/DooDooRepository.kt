@@ -6,11 +6,20 @@ import org.springframework.data.r2dbc.repository.Query
 import org.springframework.data.repository.reactive.ReactiveCrudRepository
 import org.springframework.transaction.annotation.Transactional
 import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 @Transactional
 interface DooDooRepository : ReactiveCrudRepository<DooDoo, String> {
 
-    @Query("select id, name, description, due_date, done_since, priority from doodoo")
+    @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo")
     override fun findAll() : Flux<DooDoo>
+
+    @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo WHERE id=$1")
+    override fun findById(id: String): Mono<DooDoo>
+
+    override fun <S : DooDoo?> save(entity: S): Mono<S>
+
+    @Query("DELETE * FROM doodoo WHERE id=$1")
+    override fun deleteById(id: String): Mono<Void>
 
 }

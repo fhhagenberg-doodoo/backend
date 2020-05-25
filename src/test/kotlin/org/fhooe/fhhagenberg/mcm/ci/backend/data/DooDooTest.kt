@@ -13,12 +13,12 @@ class DooDooTest {
     @Test
     fun `isDone-property returning false`() {
         val doodoo = DooDoo("id", "test1", "test2", Date(), null, 1)
-        assertFalse(doodoo.isDone)
+        assertFalse(doodoo.doneSince != null)
     }
 
     @Test
     fun `isDone-property returning true`() {
         val doodoo = DooDoo("id", "test1", "test2", Date(), Date(), 3)
-        assertTrue(doodoo.isDone)
+        assertTrue(doodoo.doneSince != null)
     }
 }

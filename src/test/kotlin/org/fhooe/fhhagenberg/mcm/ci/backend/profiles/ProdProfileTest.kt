@@ -13,11 +13,11 @@ import org.springframework.test.web.reactive.server.WebTestClient
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ProdProfileTest {
     @Autowired
-    private val webTestClient: WebTestClient? = null
+    private lateinit var webTestClient: WebTestClient
 
     @Test
     fun `swagger not available`() {
-        webTestClient!!
+        webTestClient
                 .get()
                 .uri("/swagger-ui.html")
                 .exchange()

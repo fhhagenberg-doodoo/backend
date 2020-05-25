@@ -14,11 +14,11 @@ import org.springframework.test.web.reactive.server.WebTestClient
 class DevProfileTest {
 
     @Autowired
-    private val webTestClient: WebTestClient? = null
+    private lateinit var webTestClient: WebTestClient
 
     @Test
     fun `swagger available`() {
-        webTestClient!!
+        webTestClient
                 .get()
                 .uri("/swagger-ui.html")
                 .exchange()
