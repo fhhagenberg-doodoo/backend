@@ -7,13 +7,18 @@ plugins {
 	kotlin("plugin.spring") version "1.3.72"
 }
 
-group = "org.fh-ooe.mcm.ci"
+springBoot {
+	buildInfo()
+}
+
+group = "org.fhooe.mcm.ci"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
 	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("http://oss.jfrog.org/artifactory/oss-snapshot-local/")}
 }
 
 dependencies {
@@ -37,6 +42,13 @@ dependencies {
 
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
 	testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.3.1")
+
+	// ---------------------- Documentation ------------------------------
+
+	compile ("io.springfox:springfox-swagger2:3.0.0-SNAPSHOT")
+	compile ("io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT")
+	compile ("io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT")
+
 }
 
 tasks.withType<Test> {

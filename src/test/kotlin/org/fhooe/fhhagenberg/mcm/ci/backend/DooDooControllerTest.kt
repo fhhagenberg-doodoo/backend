@@ -19,7 +19,7 @@ class DooDooControllerTest {
     private val doodoo = DooDoo("id", "testname", "test-description", Date(), null, 1)
 
     @Test
-    fun `get all endpoint returns 200 OK`() {
+    fun `find all (get) endpoint returns 200 OK`() {
         webTestClient!!
                 .get()
                 .uri("/doodoos")
@@ -29,7 +29,7 @@ class DooDooControllerTest {
     }
 
     @Test
-    fun `get find one endpoint returns 200 OK`() {
+    fun `find (get) one endpoint returns 200 OK`() {
         webTestClient!!
                 .get()
                 .uri("/doodoos/id")
