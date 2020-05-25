@@ -1,6 +1,5 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import kotlinx.coroutines.flow.Flow
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.springframework.data.r2dbc.repository.Query
 import org.springframework.data.repository.reactive.ReactiveCrudRepository

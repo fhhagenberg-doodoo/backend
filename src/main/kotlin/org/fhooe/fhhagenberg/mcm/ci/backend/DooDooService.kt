@@ -1,7 +1,6 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.withContext
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import java.util.*
 
 @Service
 class DooDooService {

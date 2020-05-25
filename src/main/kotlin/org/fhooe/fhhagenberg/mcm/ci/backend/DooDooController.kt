@@ -29,7 +29,7 @@ class DooDooController {
                 .ok()
                 .body(
                         service.findBy(id)
-        )
+                )
     }
 
     @PutMapping()
@@ -38,7 +38,7 @@ class DooDooController {
                 .ok()
                 .body(
                         service.update(dooDoo)
-        )
+                )
     }
 
     @PostMapping()
