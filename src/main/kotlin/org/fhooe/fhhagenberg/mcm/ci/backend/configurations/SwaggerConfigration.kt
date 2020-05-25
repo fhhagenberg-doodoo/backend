@@ -1,4 +1,4 @@
-package org.fhooe.fhhagenberg.mcm.ci.backend.configuration
+package org.fhooe.fhhagenberg.mcm.ci.backend.configurations
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.info.BuildProperties
@@ -35,7 +35,7 @@ class SwaggerConfiguration : WebFluxConfigurer {
                         .build())
                 .genericModelSubstitutes(Mono::class.java, Flux::class.java, Flow.Publisher::class.java)
                 .select()
-                .apis(RequestHandlerSelectors.any()) //basePackage("${buildProperties?.group}.${buildProperties?.name}".toLowerCase()))
+                .apis(RequestHandlerSelectors.any())
                 .paths(regex("/doodoos.*"))
                 .build()
     }

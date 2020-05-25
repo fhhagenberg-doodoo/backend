@@ -1,15 +1,15 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend.data
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
 import java.util.Date
 
-class DooDoo(
-        val id: String?,
+@Table("doodoo")
+data class DooDoo(
+        @Id val id: String?,
         val name: String,
         val description: String,
         val dueDate: Date,
         val doneSince: Date?,
         val priority: Int
-) {
-    var isDone: Boolean = false
-    get() = null != this.doneSince
-}
+)

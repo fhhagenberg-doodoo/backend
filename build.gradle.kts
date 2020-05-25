@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-	//implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
@@ -31,9 +31,11 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-	//runtimeOnly("io.r2dbc:r2dbc-postgresql")
-	//runtimeOnly("org.postgresql:postgresql")
+	runtimeOnly("io.r2dbc:r2dbc-postgresql")
+	runtimeOnly("org.postgresql:postgresql")
 
+
+	// ---------------------- Testing ------------------------------
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
@@ -42,6 +44,7 @@ dependencies {
 
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
 	testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.3.1")
+
 
 	// ---------------------- Documentation ------------------------------
 

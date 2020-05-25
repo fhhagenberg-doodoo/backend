@@ -2,6 +2,7 @@ package org.fhooe.fhhagenberg.mcm.ci.backend
 
 import kotlinx.coroutines.coroutineScope
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.net.URI
@@ -10,9 +11,16 @@ import java.net.URI
 @RequestMapping("/doodoos")
 class DooDooController {
 
+    @Autowired
+    lateinit var service: DooDooService
+
     @GetMapping()
     suspend fun all() = coroutineScope {
-        return@coroutineScope ResponseEntity.ok().body("")
+        return@coroutineScope ResponseEntity
+                .ok()
+                .body(
+                        service.findAll()
+                )
     }
 
     @GetMapping("/{id}")
