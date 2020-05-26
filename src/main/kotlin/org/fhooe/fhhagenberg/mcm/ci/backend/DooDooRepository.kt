@@ -18,7 +18,6 @@ interface DooDooRepository : ReactiveCrudRepository<DooDoo, String> {
     override fun findById(id: String): Mono<DooDoo>
 
     @Transactional
-    @Query("INSERT INTO doodoo (name, description, due_date, done_since, priority) VALUES ($1, $2, $3, $4, $5)")
     override fun <S : DooDoo?> save(entity: S): Mono<S>
 
     @Transactional
