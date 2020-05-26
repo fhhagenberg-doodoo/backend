@@ -26,7 +26,6 @@ import java.io.IOException
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
-
 @Profile("dev")
 @EnableTransactionManagement
 @Configuration
