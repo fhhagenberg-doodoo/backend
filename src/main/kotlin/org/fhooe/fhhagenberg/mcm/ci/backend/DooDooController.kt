@@ -3,18 +3,19 @@ package org.fhooe.fhhagenberg.mcm.ci.backend
 import kotlinx.coroutines.coroutineScope
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.net.URI
 
 @RestController
 @RequestMapping("/doodoos")
 class DooDooController {
 
     @Autowired
-    lateinit var service: DooDooService
+    private lateinit var service: DooDooService
 
-    @GetMapping()
+    @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])
     suspend fun all() = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
@@ -23,7 +24,7 @@ class DooDooController {
                 )
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}", produces = [MediaType.APPLICATION_JSON_VALUE])
     suspend fun find(@PathVariable("id") id: String) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
@@ -32,23 +33,19 @@ class DooDooController {
                 )
     }
 
-    @PutMapping()
-    suspend fun update(@RequestBody dooDoo: DooDoo) = coroutineScope {
+    @PutMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
+    suspend fun update(@RequestBody DooDoo: DooDoo) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
                 .body(
-                        service.update(dooDoo)
+                        service.update(DooDoo)
                 )
     }
 
-    @PostMapping()
-    suspend fun create(@RequestBody dooDoo: DooDoo) = coroutineScope {
-        val uri = URI.create("/")
-        return@coroutineScope ResponseEntity
-                .created(uri)
-                .body(
-                        service.create(dooDoo)
-                )
+    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @ResponseStatus(HttpStatus.CREATED)
+    suspend fun create(@RequestBody DooDoo: DooDoo) = coroutineScope {
+        return@coroutineScope service.create(DooDoo)
     }
 
     @DeleteMapping("/{id}")

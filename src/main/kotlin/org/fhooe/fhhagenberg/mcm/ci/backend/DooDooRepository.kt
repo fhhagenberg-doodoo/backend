@@ -7,18 +7,21 @@ import org.springframework.transaction.annotation.Transactional
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
-@Transactional
 interface DooDooRepository : ReactiveCrudRepository<DooDoo, String> {
 
+    @Transactional
     @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo")
     override fun findAll() : Flux<DooDoo>
 
+    @Transactional
     @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo WHERE id=$1")
     override fun findById(id: String): Mono<DooDoo>
 
+    @Transactional
+    @Query("INSERT INTO doodoo (name, description, due_date, done_since, priority) VALUES ($1, $2, $3, $4, $5)")
     override fun <S : DooDoo?> save(entity: S): Mono<S>
 
-    @Query("DELETE * FROM doodoo WHERE id=$1")
+    @Transactional
+    @Query("DELETE FROM doodoo WHERE id=$1")
     override fun deleteById(id: String): Mono<Void>
-
 }

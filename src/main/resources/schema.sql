@@ -1,20 +1,22 @@
 --CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- auto-generated definition
-create table doodoo
+DROP TABLE IF EXISTS doodoo;
+
+CREATE TABLE doodoo
 (
-    id          varchar(255) default uuid_generate_v4() not null
-        constraint doodoo_pk
-            primary key,
-    name        varchar(255),
-    description varchar(255),
-    due_date    timestamp,
-    done_since  timestamp,
-    priority    integer      default 1                  not null
+    id          VARCHAR(255) DEFAULT uuid_generate_v4() NOT NULL
+                CONSTRAINT doodoo_pk
+                PRIMARY KEY,
+    name        VARCHAR(255),
+    description VARCHAR(255),
+    due_date    TIMESTAMP    WITH TIME ZONE,
+    done_since  TIMESTAMP    WITH TIME ZONE,
+    priority    INTEGER      DEFAULT 1                  NOT NULL
 );
 
--- alter table doodoo
---     owner to postgres;
+-- ALTER TABLE doodoo
+--     OWNER TO postgres;
 
-create unique index doodoo_id_uindex
-    on doodoo (id);
+CREATE UNIQUE index doodoo_id_uindex
+    ON doodoo (id);

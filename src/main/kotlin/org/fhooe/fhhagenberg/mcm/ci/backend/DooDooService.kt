@@ -3,6 +3,7 @@ package org.fhooe.fhhagenberg.mcm.ci.backend
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.withContext
+import lombok.extern.slf4j.Slf4j
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -10,16 +11,18 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Service
+@Slf4j
 class DooDooService {
 
     @Autowired
-    lateinit var repository: DooDooRepository
+    private lateinit var repository: DooDooRepository
 
     suspend fun findAll(): Flux<DooDoo> {
         return repository.findAll()
     }
 
     suspend fun create(doodoo: DooDoo): Mono<DooDoo> {
+        doodoo
         return repository.save(doodoo)
     }
 

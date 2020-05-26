@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.reactive.server.WebTestClient
+import java.time.OffsetDateTime
 import java.util.Date
 
 @ExtendWith(SpringExtension::class)
@@ -16,7 +17,7 @@ class DooDooControllerTest {
     @Autowired
     private lateinit var webTestClient: WebTestClient
 
-    private val doodoo = DooDoo("id", "testname", "test-description", Date(), null, 1)
+    private val doodoo = DooDoo("id", "testname", "test-description", OffsetDateTime.now(), null, 1)
 
     @Test
     fun `find all (get) endpoint returns 200 OK`() {
