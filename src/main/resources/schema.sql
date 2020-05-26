@@ -1,4 +1,4 @@
---CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- auto-generated definition
 DROP TABLE IF EXISTS doodoo;
@@ -15,8 +15,8 @@ CREATE TABLE doodoo
     priority    INTEGER      DEFAULT 1                  NOT NULL
 );
 
--- ALTER TABLE doodoo
---     OWNER TO postgres;
+ALTER TABLE doodoo
+     OWNER TO postgres;
 
 CREATE UNIQUE index doodoo_id_uindex
     ON doodoo (id);

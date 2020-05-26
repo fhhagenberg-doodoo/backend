@@ -40,7 +40,7 @@ class DBConfiguration: AbstractR2dbcConfiguration() {
                         .option(PORT, 5432)
                         .option(USER, "postgres")
                         .option(PASSWORD, "postgres")
-                        .option(DATABASE, "doodoo_tasks")
+                        .option(DATABASE, "postgres")
                         .option(MAX_SIZE, 40)
                         .build()
         )
