@@ -1,4 +1,8 @@
-# Getting Started
+# Backend ![Assemble](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble/badge.svg?branch=develop&event=push)
+***
+
+# Spring Boot
+## Getting Started
 
 ### Reference Documentation
 For further reference, please consider the following sections:
