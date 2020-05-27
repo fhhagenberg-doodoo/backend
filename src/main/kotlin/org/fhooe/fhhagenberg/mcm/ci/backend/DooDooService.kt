@@ -1,7 +1,10 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.reactive.asFlow
 import kotlinx.coroutines.reactive.awaitFirst
+import kotlinx.coroutines.reactive.awaitSingle
 import kotlinx.coroutines.withContext
 import lombok.extern.slf4j.Slf4j
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
@@ -18,15 +21,12 @@ class DooDooService {
     @Autowired
     private lateinit var repository: DooDooRepository
 
-    suspend fun findAll(): Flux<DooDoo> {
-        return repository.findAll()
+    suspend fun findAll(): Flow<DooDoo> {
+        return repository.findAll().asFlow()
     }
 
     suspend fun create(doodoo: DooDoo): DooDoo? {
-        val result = withContext(Dispatchers.Default) {
-            repository.save(doodoo)
-        }.awaitFirst()
-        return result
+        return repository.save(doodoo).awaitSingle()
     }
 
     suspend fun delete(id: String): Mono<Void> {
@@ -34,21 +34,16 @@ class DooDooService {
     }
 
     suspend fun update(doodoo: DooDoo): DooDoo? {
-        val result = withContext(Dispatchers.Default) {
-            repository.save(doodoo)
-        }.awaitFirst()
-        return result
+        return repository.save(doodoo).awaitSingle()
     }
 
-    suspend fun findBy(id: String): Mono<DooDoo> {
-        return repository.findById(id)
+    suspend fun findBy(id: String): DooDoo? {
+        return repository.findById(id).awaitSingle()
     }
 
-    suspend fun setDone(id: String): Mono<DooDoo> {
-        var result = withContext(Dispatchers.Default) {
-            repository.findById(id)
-        }.awaitFirst()
+    suspend fun setDone(id: String): DooDoo? {
+        val result = repository.findById(id).awaitSingle()
         result.doneSince = OffsetDateTime.now()
-        return repository.save(result)
+        return repository.save(result).awaitSingle()
     }
 }
