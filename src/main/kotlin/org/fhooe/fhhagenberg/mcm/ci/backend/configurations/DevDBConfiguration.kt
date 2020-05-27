@@ -29,7 +29,7 @@ import java.time.format.DateTimeFormatter
 @Profile("dev")
 @EnableTransactionManagement
 @Configuration
-class DBConfiguration: AbstractR2dbcConfiguration() {
+class DevDBConfiguration: AbstractR2dbcConfiguration() {
 
    @Bean(name=["postgreConnectionFactory"])
     override fun connectionFactory(): ConnectionFactory {
