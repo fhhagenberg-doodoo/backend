@@ -6,7 +6,10 @@ on:
 
 jobs:
   build-project:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+      runs-on: ${{ matrix.os }}
     steps:
       - name: checkout branch
         uses: actions/checkout@v2
@@ -14,8 +17,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: prepare gradle
-        run: chmod +x gradlew
-      - name: build with gradle
-        run: ./gradlew build
-
+      - uses: eskatos/gradle-command-action@v1
+          with:
+            arguments: build
+            gradle-version: 6.4.1
