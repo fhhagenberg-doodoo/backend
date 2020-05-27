@@ -20,3 +20,17 @@ These additional references should also help you:
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 * [R2DBC Homepage](https://r2dbc.io)
 
+***
+
+# Github Actions
+
+With this config you can let your code be run on different VMs:
+
+```YAML
+jobs:
+   build-project:
+    strategy:
+	  matrix:
+	   os: [ubuntu-latest, macos-latest, windows-latest]
+	 runs-on: ${{ matrix.os }}
+```
