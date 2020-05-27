@@ -17,7 +17,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - uses: eskatos/gradle-command-action@v1
-          with:
-            arguments: build
-            gradle-version: 6.4.1
+      - name: build project with gradle
+        uses: eskatos/gradle-command-action@v1
+        with:
+          arguments: build
+          gradle-version: 6.4.1
