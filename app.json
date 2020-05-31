@@ -1,0 +1,7 @@
+{
+  "name": "DooDoo Spring Boot Backend Application",
+  "description": "This is a small application to serve as backend for the doodoo-todo-list application.",
+  "repository": "https://github.com/fhhagenberg-doodoo/backend",
+  "image": "heroku/gradle",
+  "addons": [ "heroku-postgresql" ]
+}
