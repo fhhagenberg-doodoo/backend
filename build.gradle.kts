@@ -14,6 +14,7 @@ springBoot {
 group = "org.fhooe.mcm.ci"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
@@ -63,5 +64,25 @@ tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
+	}
+}
+
+tasks.withType<ProcessResources> {
+	filesMatching("**/*.properties") {
+		expand(project.properties)
+	}
+}
+
+tasks.withType<JavaCompile> {
+	options.encoding = "UTF-8"
+}
+
+tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+	archiveFileName.set("doodoo-backend.jar")
+}
+
+tasks.withType<org.springframework.boot.gradle.tasks.run.BootRun> {
+	if (project.hasProperty("prod")) {
+		setArgsString("--spring.profiles.active=prod")
 	}
 }

@@ -220,7 +220,3 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/go,java,macos,gradle,kotlin,windows,intellij+all
-gradle/wrapper/gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.properties
-gradlew
-gradlew.bat
