@@ -15,8 +15,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Build project with Gradle
-        uses: eskatos/gradle-command-action@v1
-        with:
-          arguments: assemble -Dspring.profiles.active=test
-          gradle-version: 6.4.1
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+      - name: Assemble with Gradle
+        run: ./gradlew assemble
