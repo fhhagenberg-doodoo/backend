@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*
 import java.net.URI
 
 @RestController
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/doodoos")
 class DooDooController {
 
