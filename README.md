@@ -38,3 +38,33 @@ jobs:
 	   os: [ubuntu-latest, macos-latest, windows-latest]
 	 runs-on: ${{ matrix.os }}
 ```
+
+***
+# Problem Solving / Lesson learnt
+
+## Github <-> Heroku Integration
+
+- [https://devcenter.heroku.com/articles/github-integration#automatic-deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys)
+
+## Remove Credentials from source control
+
+
+## Deploying Spring Boot to Heroku
+- [https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku)
+
+## Kotlin Linter
+- [https://github.com/pinterest/ktlint](https://github.com/pinterest/ktlint)
+
+## Why CORS is important
+- [https://www.baeldung.com/spring-cors](https://www.baeldung.com/spring-cors)
+- [https://enable-cors.org](https://enable-cors.org)
+
+## Spring Boot / R2DBC / PostgreSQL
+
+- [https://dzone.com/articles/bounty-spring-boot-and-postgresql-database](https://dzone.com/articles/bounty-spring-boot-and-postgresql-database)
+- [http://zetcode.com/springboot/postgresql/](http://zetcode.com/springboot/postgresql/)
+- [https://dzone.com/articles/spring-boot-and-postgresql](https://dzone.com/articles/spring-boot-and-postgresql)
+- [https://springframework.guru/configuring-spring-boot-for-postgresql/](https://springframework.guru/configuring-spring-boot-for-postgresql/)
+
+## Spring Boot / R2DBC / H2 (In-Memory DB)
+- [https://www.baeldung.com/spring-boot-h2-database](https://www.baeldung.com/spring-boot-h2-database)
