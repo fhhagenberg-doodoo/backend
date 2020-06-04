@@ -10,3 +10,9 @@ docker run --rm --name pg-docker -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -
 # docker exec -it pg-docker /bin/bash
 # psql -h localhost -U postgres -d postgres
 # alter user postgres with password 'postgres';
+
+# Heroku init
+
+# heroku run pg:psql -a <application-project-name>
+# <execute SQL statements
+# \q

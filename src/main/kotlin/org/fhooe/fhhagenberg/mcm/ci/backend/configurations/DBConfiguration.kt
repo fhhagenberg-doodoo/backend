@@ -17,7 +17,6 @@ import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePop
 import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @Profile("dev")
-@EnableTransactionManagement
 @Configuration
 class DBConfiguration: AbstractR2dbcConfiguration() {
 
