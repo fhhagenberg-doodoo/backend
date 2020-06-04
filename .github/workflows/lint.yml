@@ -1,3 +1,7 @@
+# On every pull request we check if the current branch is able to be built
+
+name: Lint Project
+
 on: pull_request
 
 jobs:
