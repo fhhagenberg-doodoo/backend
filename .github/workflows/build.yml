@@ -1,9 +1,8 @@
-# On every push we check if the current branch is able to be assembled
+# On every push we check if the current branch is able to be built
 
 name: Build Project
 
-on:
-  push:
+on: push
 
 jobs:
   runner-job:
