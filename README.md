@@ -1,4 +1,4 @@
-# Backend ![Build Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Build%20Project/badge.svg?branch=master) [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+# Backend ![Assemble Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble%20Project/badge.svg?branch=master&event=check_run) [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 ***
 
 # Spring Boot
@@ -54,7 +54,6 @@ jobs:
 
 ## Kotlin Linter
 - [https://github.com/pinterest/ktlint](https://github.com/pinterest/ktlint)
-- [https://github.com/jeremymailen/kotlinter-gradle](https://github.com/jeremymailen/kotlinter-gradle)
 
 ## Why CORS is important
 - [https://www.baeldung.com/spring-cors](https://www.baeldung.com/spring-cors)
@@ -77,3 +76,8 @@ jobs:
 
 ## Github Action Docker Postgres
 - [https://help.github.com/en/actions/configuring-and-managing-workflows/creating-postgresql-service-containers](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-postgresql-service-containers)
+
+## Code Coverage
+- [https://stackoverflow.com/questions/56056206/configure-jacoco-with-gradle-and-kotlin-dsl](https://stackoverflow.com/questions/56056206/configure-jacoco-with-gradle-and-kotlin-dsl)
+- [https://docs.gradle.org/current/userguide/jacoco_plugin.html](https://docs.gradle.org/current/userguide/jacoco_plugin.html)
+- [https://github.com/codecov/codecov-action](https://github.com/codecov/codecov-action)
