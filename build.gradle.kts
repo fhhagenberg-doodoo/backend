@@ -99,6 +99,10 @@ tasks.test {
 
 tasks.jacocoTestReport {
 	dependsOn(tasks.test)
+    reports {
+        xml.isEnabled = true
+        xml.destination = file("$buildDir/reports/jacoco/xml/codecov.xml")
+    }
 }
 
 
