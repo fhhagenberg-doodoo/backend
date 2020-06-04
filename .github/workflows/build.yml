@@ -1,6 +1,6 @@
 # On every push we check if the current branch is able to be built
 
-name: Assemble and test Project
+name: Assemble Project
 
 on: push
 
