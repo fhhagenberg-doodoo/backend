@@ -1,4 +1,4 @@
-package org.fhooe.fhhagenberg.mcm.ci.backend.configurations
+package org.fhooe.fhhagenberg.mcm.ci.backend
 
 import io.r2dbc.pool.PoolingConnectionFactoryProvider.MAX_SIZE
 import io.r2dbc.spi.ConnectionFactories
@@ -16,9 +16,8 @@ import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryIn
 import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator
 import org.springframework.transaction.annotation.EnableTransactionManagement
 
-@Profile("dev")
 @Configuration
-class DBConfiguration: AbstractR2dbcConfiguration() {
+class TestDBConfiguration: AbstractR2dbcConfiguration() {
 
     @Value("\${spring.r2dbc.username}")
     private lateinit var username: String

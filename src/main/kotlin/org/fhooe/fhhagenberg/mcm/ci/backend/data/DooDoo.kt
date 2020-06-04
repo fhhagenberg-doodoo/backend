@@ -1,7 +1,9 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend.data
 
 import com.fasterxml.jackson.annotation.JsonFormat
+import lombok.AllArgsConstructor
 import lombok.Data
+import lombok.NoArgsConstructor
 import org.springframework.data.annotation.Id
 import org.springframework.data.domain.Persistable
 import org.springframework.data.relational.core.mapping.Table
@@ -11,6 +13,8 @@ import java.time.OffsetDateTime
 import java.util.Date
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table("doodoo")
 data class DooDoo(
         @Id val id: String?,

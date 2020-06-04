@@ -68,3 +68,8 @@ jobs:
 
 ## Spring Boot / R2DBC / H2 (In-Memory DB)
 - [https://www.baeldung.com/spring-boot-h2-database](https://www.baeldung.com/spring-boot-h2-database)
+- [https://stackoverflow.com/questions/24223631/h2-postgresql-mode-seems-not-working-for-me](https://stackoverflow.com/questions/24223631/h2-postgresql-mode-seems-not-working-for-me)
+- [https://stackoverflow.com/questions/7872693/running-postgresql-in-memory-only](https://stackoverflow.com/questions/7872693/running-postgresql-in-memory-only)
+
+## Heroku PostgreSQL Connection
+- [https://devcenter.heroku.com/articles/heroku-postgresql](https://devcenter.heroku.com/articles/heroku-postgresql)
