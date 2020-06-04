@@ -2,7 +2,7 @@
 
 name: Test Project And Report Code Coverage
 
-on: push
+on: pull_request
 
 jobs:
   runner-job:
