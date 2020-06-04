@@ -1,6 +1,5 @@
-package org.fhooe.fhhagenberg.mcm.ci.backend.unittests
+package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import org.fhooe.fhhagenberg.mcm.ci.backend.DooDooRepository
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
@@ -15,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
-@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DooDooRepositoryTest {
 
     @Autowired

@@ -49,7 +49,7 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
 	testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.3.1")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.2")
-
+   // testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 	// ---------------------- Documentation ------------------------------
 
 	compile ("io.springfox:springfox-swagger2:3.0.0-SNAPSHOT")
