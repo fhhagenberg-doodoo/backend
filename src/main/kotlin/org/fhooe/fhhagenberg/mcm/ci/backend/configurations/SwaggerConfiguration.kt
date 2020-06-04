@@ -1,5 +1,6 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend.configurations
 
+import java.util.concurrent.Flow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.info.BuildProperties
 import org.springframework.context.annotation.Bean
@@ -15,7 +16,6 @@ import springfox.documentation.builders.RequestHandlerSelectors
 import springfox.documentation.spi.DocumentationType
 import springfox.documentation.spring.web.plugins.Docket
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux
-import java.util.concurrent.Flow
 
 @Profile("dev")
 @Configuration
@@ -33,7 +33,11 @@ class SwaggerConfiguration : WebFluxConfigurer {
                         .title(buildProperties?.name)
                         .version(buildProperties?.version)
                         .build())
-                .genericModelSubstitutes(Mono::class.java, Flux::class.java, Flow.Publisher::class.java)
+                .genericModelSubstitutes(
+                    Mono::class.java,
+                    Flux::class.java,
+                    Flow.Publisher::class.java
+                )
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(regex("/doodoos.*"))

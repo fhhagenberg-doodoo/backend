@@ -1,18 +1,14 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import kotlinx.coroutines.Dispatchers
+import java.time.OffsetDateTime
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.reactive.asFlow
-import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.reactive.awaitSingle
-import kotlinx.coroutines.withContext
 import lombok.extern.slf4j.Slf4j
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import java.time.OffsetDateTime
 
 @Service
 @Slf4j
