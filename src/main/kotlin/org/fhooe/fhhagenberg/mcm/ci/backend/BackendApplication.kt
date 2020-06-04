@@ -14,6 +14,6 @@ class BackendApplication
 
 fun main(args: Array<String>) {
 
-	println("API-Docs available at: http://localhost:8081/swagger-ui.html")
-	runApplication<BackendApplication>(*args)
+    println("API-Docs available at: http://localhost:8081/swagger-ui.html")
+    runApplication<BackendApplication>(*args)
 }

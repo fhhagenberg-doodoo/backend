@@ -11,7 +11,7 @@ interface DooDooRepository : ReactiveCrudRepository<DooDoo, String> {
 
     @Transactional
     @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo")
-    override fun findAll() : Flux<DooDoo>
+    override fun findAll(): Flux<DooDoo>
 
     @Transactional
     @Query("SELECT id, name, description, due_date, done_since, priority FROM doodoo WHERE id=$1")

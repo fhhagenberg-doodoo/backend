@@ -8,16 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Profile
 import org.springframework.core.io.ClassPathResource
 import org.springframework.data.r2dbc.config.AbstractR2dbcConfiguration
 import org.springframework.data.r2dbc.connectionfactory.init.CompositeDatabasePopulator
 import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryInitializer
 import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator
-import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @Configuration
-class TestDBConfiguration: AbstractR2dbcConfiguration() {
+class TestDBConfiguration : AbstractR2dbcConfiguration() {
 
     @Value("\${spring.r2dbc.username}")
     private lateinit var username: String
@@ -34,7 +32,7 @@ class TestDBConfiguration: AbstractR2dbcConfiguration() {
     @Value("\${spring.r2dbc.password}")
     private lateinit var password: String
 
-    @Bean(name=["postgreConnectionFactory"])
+    @Bean(name = ["postgreConnectionFactory"])
     override fun connectionFactory(): ConnectionFactory {
         return ConnectionFactories.get(
                 builder()
@@ -51,7 +49,7 @@ class TestDBConfiguration: AbstractR2dbcConfiguration() {
 
     @Bean
     fun initializer(
-            @Qualifier("postgreConnectionFactory") connectionFactory: ConnectionFactory?
+        @Qualifier("postgreConnectionFactory") connectionFactory: ConnectionFactory?
     ): ConnectionFactoryInitializer? {
         val initializer = ConnectionFactoryInitializer()
         initializer.setConnectionFactory(connectionFactory!!)

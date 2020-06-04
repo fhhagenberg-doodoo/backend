@@ -14,11 +14,10 @@ import org.springframework.data.r2dbc.config.AbstractR2dbcConfiguration
 import org.springframework.data.r2dbc.connectionfactory.init.CompositeDatabasePopulator
 import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryInitializer
 import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator
-import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @Profile("dev")
 @Configuration
-class DBConfiguration: AbstractR2dbcConfiguration() {
+class DBConfiguration : AbstractR2dbcConfiguration() {
 
     @Value("\${spring.r2dbc.username}")
     private lateinit var username: String
@@ -35,7 +34,7 @@ class DBConfiguration: AbstractR2dbcConfiguration() {
     @Value("\${spring.r2dbc.password}")
     private lateinit var password: String
 
-    @Bean(name=["postgreConnectionFactory"])
+    @Bean(name = ["postgreConnectionFactory"])
     override fun connectionFactory(): ConnectionFactory {
         return ConnectionFactories.get(
                 builder()
@@ -52,7 +51,7 @@ class DBConfiguration: AbstractR2dbcConfiguration() {
 
     @Bean
     fun initializer(
-            @Qualifier("postgreConnectionFactory") connectionFactory: ConnectionFactory?
+        @Qualifier("postgreConnectionFactory") connectionFactory: ConnectionFactory?
     ): ConnectionFactoryInitializer? {
         val initializer = ConnectionFactoryInitializer()
         initializer.setConnectionFactory(connectionFactory!!)

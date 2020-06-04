@@ -1,13 +1,12 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
+import java.net.URI
 import kotlinx.coroutines.coroutineScope
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.net.URI
 
 @RestController
 @CrossOrigin(maxAge = 3600)
@@ -38,7 +37,10 @@ class DooDooController {
                 .body(service.update(doodoo))
     }
 
-    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE], produces = [MediaType.APPLICATION_JSON_VALUE])
+    @PostMapping(
+        consumes = [MediaType.APPLICATION_JSON_VALUE],
+        produces = [MediaType.APPLICATION_JSON_VALUE]
+    )
     suspend fun create(@RequestBody doodoo: DooDoo) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .created(URI("/created"))
