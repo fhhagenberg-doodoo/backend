@@ -1,4 +1,6 @@
-# Backend ![Assemble Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble%20Project/badge.svg?branch=master&event=check_run) [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+# Backend 
+
+![Assemble Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble%20Project/badge.svg)  [![codecov](https://codecov.io/gh/fhhagenberg-doodoo/backend/branch/master/graph/badge.svg?token=STOG65KCML)](https://codecov.io/gh/fhhagenberg-doodoo/backend)  [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 ***
 
 # Spring Boot
