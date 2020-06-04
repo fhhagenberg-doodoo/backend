@@ -1,4 +1,4 @@
-package org.fhooe.fhhagenberg.mcm.ci.backend
+package org.fhooe.fhhagenberg.mcm.ci.backend.configurations
 
 import io.r2dbc.pool.PoolingConnectionFactoryProvider.MAX_SIZE
 import io.r2dbc.spi.ConnectionFactories
