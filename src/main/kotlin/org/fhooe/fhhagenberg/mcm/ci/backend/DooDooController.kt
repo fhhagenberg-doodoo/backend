@@ -51,7 +51,7 @@ class DooDooController {
     suspend fun delete(@PathVariable("id") id: String) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
-                .body(service.delete(id).map { id })
+                .body(service.delete(id)?.map { id })
     }
 
     @PutMapping("/{id}/done")
