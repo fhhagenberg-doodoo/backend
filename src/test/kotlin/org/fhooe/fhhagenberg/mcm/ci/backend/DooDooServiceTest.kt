@@ -3,7 +3,6 @@ package org.fhooe.fhhagenberg.mcm.ci.backend
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.reactor.asFlux
 import kotlinx.coroutines.runBlocking
-import org.assertj.core.api.Assertions.assertThat
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
@@ -171,7 +170,7 @@ class DooDooServiceTest {
                 service.setDone(undoneObject.id!!)
             }!!
 
-            assertTrue(null != resultDone.doneSince )
+            assertTrue(null != resultDone.doneSince)
         }
 
         @Test

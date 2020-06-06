@@ -1,7 +1,5 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import org.assertj.core.api.Assertions
-import org.assertj.core.api.Assertions.assertThat
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested

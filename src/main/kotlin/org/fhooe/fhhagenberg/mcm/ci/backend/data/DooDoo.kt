@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import java.time.OffsetDateTime
 import lombok.AllArgsConstructor
 import lombok.Data
-import lombok.Generated
 import lombok.NoArgsConstructor
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table

@@ -1,6 +1,5 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import org.assertj.core.api.Assertions.assertThat
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
@@ -10,13 +9,11 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.MediaType
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.reactive.server.WebTestClient
 import org.springframework.test.web.reactive.server.expectBody
 import org.springframework.transaction.annotation.Transactional
-import java.util.stream.Stream
 
 @Transactional
 @AutoConfigureWebTestClient
@@ -110,27 +107,6 @@ class DooDooControllerTest {
 
             assertTrue(result)
         }
-
-   /*     @Test
-        fun `Create invalid object`() {
-            val result = webTestClient
-                .post()
-                .uri("/doodoos")
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue("""{
-  "name": "test3",
-  "description": "test-description",
-  "dueDate": "2020-10-12T08:08:12.000+02:00",
-  "doneSince": null,
-  "priority": 6
-}""")
-                .exchange()
-                .expectStatus().isBadRequest
-                .returnResult(DooDoo::class.java)
-                .responseBody.blockFirst()!!
-
-            assertEquals("""""", result)
-        }*/
     }
 
     @Nested
