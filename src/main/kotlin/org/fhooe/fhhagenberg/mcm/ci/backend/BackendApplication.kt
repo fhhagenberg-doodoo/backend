@@ -1,5 +1,6 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
+import lombok.Generated
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories
@@ -12,6 +13,7 @@ import org.springframework.web.reactive.config.EnableWebFlux
 @SpringBootApplication
 class BackendApplication
 
+@Generated
 fun main(args: Array<String>) {
 
     println("API-Docs available at: http://localhost:8081/swagger-ui.html")

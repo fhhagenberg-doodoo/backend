@@ -25,9 +25,13 @@ class DooDooController {
 
     @GetMapping("/{id}", produces = [MediaType.APPLICATION_JSON_VALUE])
     suspend fun find(@PathVariable("id") id: String) = coroutineScope {
-        return@coroutineScope ResponseEntity
-                .ok()
-                .body(service.findBy(id))
+
+        val result = service.findBy(id)
+        return@coroutineScope if (null == result) {
+            ResponseEntity.notFound().build()
+        } else {
+            ResponseEntity.ok().body(result)
+        }
     }
 
     @PutMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
@@ -51,7 +55,7 @@ class DooDooController {
     suspend fun delete(@PathVariable("id") id: String) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
-                .body(service.delete(id).map { id })
+                .body(service.delete(id))
     }
 
     @PutMapping("/{id}/done")

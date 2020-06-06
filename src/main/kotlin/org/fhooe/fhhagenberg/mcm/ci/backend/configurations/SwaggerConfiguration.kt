@@ -23,15 +23,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux
 class SwaggerConfiguration : WebFluxConfigurer {
 
     @Autowired
-    var buildProperties: BuildProperties? = null
+    lateinit var buildProperties: BuildProperties
 
     @Bean
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(ApiInfoBuilder()
-                        .description("${buildProperties?.group}.${buildProperties?.name}")
-                        .title(buildProperties?.name)
-                        .version(buildProperties?.version)
+                        .description("${buildProperties.group}.${buildProperties.name}")
+                        .title(buildProperties.name)
+                        .version(buildProperties.version)
                         .build())
                 .genericModelSubstitutes(
                     Mono::class.java,

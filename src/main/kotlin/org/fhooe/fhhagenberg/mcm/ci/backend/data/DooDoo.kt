@@ -13,12 +13,17 @@ import org.springframework.data.relational.core.mapping.Table
 @AllArgsConstructor
 @Table("doodoo")
 data class DooDoo(
-    @Id val id: String?,
+    @Id var id: String?,
+
     val name: String,
+
     val description: String,
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     val dueDate: OffsetDateTime,
+
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     var doneSince: OffsetDateTime?,
+
     val priority: Int
 )
