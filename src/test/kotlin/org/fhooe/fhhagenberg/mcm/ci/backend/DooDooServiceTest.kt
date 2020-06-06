@@ -4,8 +4,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.reactor.asFlux
 import kotlinx.coroutines.runBlocking
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertNull
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -13,9 +12,11 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit.jupiter.SpringExtension
+import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
+@Transactional
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DooDooServiceTest {
 
@@ -30,7 +31,7 @@ class DooDooServiceTest {
             val result = runBlocking {
                 service.findAll()
             }.asFlux().collectList().block()!!
-            assertEquals(2, result.count()!!)
+            assertEquals(2, result.count())
         }
 
         @Test
@@ -150,6 +151,51 @@ class DooDooServiceTest {
             assertEquals(2, runBlocking {
                 service.findAll().asFlux().collectList().block()!!.count()
             })
+        }
+    }
+
+    @Nested
+    inner class SetDoneObjects {
+
+        @Test
+        fun `SetDone on existing object`() {
+            val resultAll = runBlocking {
+                service.findAll()
+            }.asFlux().collectList().block()!!
+
+            val undoneObject = resultAll.filter { it.doneSince == null }.get(0)
+            assertTrue(null == undoneObject.doneSince)
+
+            val resultDone = runBlocking {
+                service.setDone(undoneObject.id!!)
+            }!!
+
+            assertTrue(null != resultDone.doneSince)
+        }
+
+        @Test
+        fun `SetDone on done object`() {
+            val resultAll = runBlocking {
+                service.findAll()
+            }.asFlux().collectList().block()!!
+
+            val undoneObject = resultAll.filter { it.doneSince != null }.get(0)
+            assertFalse(null == undoneObject.doneSince)
+
+            val resultDone = runBlocking {
+                service.setDone(undoneObject.id!!)
+            }
+
+            assertNull(resultDone)
+        }
+
+        @Test
+        fun `SetDone non-existing object`() {
+            val result = runBlocking {
+                service.setDone("non-existing-id")
+            }
+
+            assertNull(result)
         }
     }
 }

@@ -88,4 +88,21 @@ jobs:
 - [https://www.baeldung.com/junit-5-kotlin](https://www.baeldung.com/junit-5-kotlin)
 - [https://mike-plummer.github.io/2016-07-26-junit-5-with-spring-boot-plus-kotlin/?no-cache=1](https://mike-plummer.github.io/2016-07-26-junit-5-with-spring-boot-plus-kotlin/?no-cache=1)
 - [https://phauer.com/2018/best-practices-unit-testing-kotlin/#tldr](https://phauer.com/2018/best-practices-unit-testing-kotlin/#tldr)
-- 
+- [https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/run-blocking-test.html](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/run-blocking-test.html)
+- [https://dev.to/kerooker/testing-a-spring-boot-application-with-kotlintest-pgd](https://dev.to/kerooker/testing-a-spring-boot-application-with-kotlintest-pgd)
+- [https://github.com/pkainulainen/test-with-spring/tree/master/master-package/bonus-webinars-2019/unit-tests-rest-api](https://github.com/pkainulainen/test-with-spring/tree/master/master-package/bonus-webinars-2019/unit-tests-rest-api)
+- [https://www.baeldung.com/mockmvc-kotlin-dsl](https://www.baeldung.com/mockmvc-kotlin-dsl)
+- [https://medium.com/swlh/https-medium-com-jet-cabral-testing-spring-boot-restful-apis-b84ea031973d](https://medium.com/swlh/https-medium-com-jet-cabral-testing-spring-boot-restful-apis-b84ea031973d)
+
+## Spring Boot Validation
+Are not working due to no supported in Kotlin!
+
+- [https://www.baeldung.com/spring-boot-bean-validation](https://www.baeldung.com/spring-boot-bean-validation)
+- [https://www.baeldung.com/spring-data-rest-validators](https://www.baeldung.com/spring-data-rest-validators)
+- [https://howtodoinjava.com/spring-restful/request-body-parameter-validation/](https://howtodoinjava.com/spring-restful/request-body-parameter-validation/)
+- [https://dzone.com/articles/implementing-validation-for-restful-services-with](https://dzone.com/articles/implementing-validation-for-restful-services-with)
+- [https://stackoverflow.com/questions/36515094/kotlin-and-valid-spring-annotation](https://stackoverflow.com/questions/36515094/kotlin-and-valid-spring-annotation)
+- [https://www.toptal.com/java/spring-boot-rest-api-error-handling](https://www.toptal.com/java/spring-boot-rest-api-error-handling)
+
+## Spring Boot Exception Handling
+- [https://www.baeldung.com/exception-handling-for-rest-with-spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)

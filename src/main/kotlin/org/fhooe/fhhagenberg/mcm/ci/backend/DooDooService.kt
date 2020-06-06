@@ -51,8 +51,12 @@ class DooDooService {
     }
 
     suspend fun setDone(id: String): DooDoo? {
-        val result = repository.findById(id).awaitSingle()
-        result.doneSince = OffsetDateTime.now()
-        return repository.save(result).awaitSingle()
+        val result = repository.findById(id).awaitFirstOrNull()
+        return if (null != result && null == result.doneSince) {
+            result.doneSince = OffsetDateTime.now()
+            repository.save(result).awaitSingle()
+        } else {
+            null
+        }
     }
 }
