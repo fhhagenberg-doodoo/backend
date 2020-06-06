@@ -54,9 +54,6 @@ class DooDooController {
         produces = [MediaType.APPLICATION_JSON_VALUE]
     )
     suspend fun create(@RequestBody doodoo: DooDoo) = coroutineScope {
-        if (doodoo.priority > 5) {
-            throw ResponseStatusException(HttpStatus.BAD_REQUEST, "priority Range")
-        }
         return@coroutineScope ResponseEntity
                 .created(URI("/created"))
                 .body(service.create(doodoo))

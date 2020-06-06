@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Profile
 import org.springframework.core.io.ClassPathResource
 import org.springframework.data.r2dbc.config.AbstractR2dbcConfiguration
 import org.springframework.data.r2dbc.connectionfactory.init.CompositeDatabasePopulator
 import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryInitializer
 import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator
 
+@Profile("!dev")
 @Configuration
 class TestDBConfiguration : AbstractR2dbcConfiguration() {
 
