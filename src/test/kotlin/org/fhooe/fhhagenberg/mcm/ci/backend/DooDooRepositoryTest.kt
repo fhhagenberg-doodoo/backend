@@ -1,5 +1,7 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
+import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
@@ -11,9 +13,11 @@ import org.junit.jupiter.params.provider.ValueSource
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit.jupiter.SpringExtension
+import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
+@Transactional
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DooDooRepositoryTest {
 

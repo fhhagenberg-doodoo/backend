@@ -28,7 +28,10 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+    //implementation("org.springframework.boot:spring-boot-starter-validation:2.3.0.RELEASE")
+
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    //implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	implementation("org.projectlombok:lombok:1.18.12")
 
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
@@ -49,9 +52,8 @@ dependencies {
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
 	testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.3.1")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.4.2")
-   // testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
-	// ---------------------- Documentation ------------------------------
 
+	// ---------------------- Documentation ------------------------------
 	compile ("io.springfox:springfox-swagger2:3.0.0-SNAPSHOT")
 	compile ("io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT")
 	compile ("io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT")

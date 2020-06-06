@@ -1,12 +1,20 @@
 package org.fhooe.fhhagenberg.mcm.ci.backend
 
-import java.net.URI
 import kotlinx.coroutines.coroutineScope
 import org.fhooe.fhhagenberg.mcm.ci.backend.data.DooDoo
+import org.springframework.beans.TypeMismatchException
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.support.WebExchangeBindException
+import org.springframework.web.client.HttpClientErrorException
+import org.springframework.web.reactive.function.client.WebClientResponseException
+import org.springframework.web.server.ResponseStatusException
+import java.net.URI
+
 
 @RestController
 @CrossOrigin(maxAge = 3600)
@@ -25,9 +33,13 @@ class DooDooController {
 
     @GetMapping("/{id}", produces = [MediaType.APPLICATION_JSON_VALUE])
     suspend fun find(@PathVariable("id") id: String) = coroutineScope {
-        return@coroutineScope ResponseEntity
-                .ok()
-                .body(service.findBy(id))
+
+        val result = service.findBy(id)
+        return@coroutineScope if (null == result) {
+            ResponseEntity.notFound().build()
+        } else {
+            ResponseEntity.ok().body(result)
+        }
     }
 
     @PutMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
@@ -42,6 +54,9 @@ class DooDooController {
         produces = [MediaType.APPLICATION_JSON_VALUE]
     )
     suspend fun create(@RequestBody doodoo: DooDoo) = coroutineScope {
+        if (doodoo.priority > 5) {
+            throw ResponseStatusException(HttpStatus.BAD_REQUEST, "priority Range")
+        }
         return@coroutineScope ResponseEntity
                 .created(URI("/created"))
                 .body(service.create(doodoo))
@@ -51,7 +66,7 @@ class DooDooController {
     suspend fun delete(@PathVariable("id") id: String) = coroutineScope {
         return@coroutineScope ResponseEntity
                 .ok()
-                .body(service.delete(id)?.map { id })
+                .body(service.delete(id))
     }
 
     @PutMapping("/{id}/done")
