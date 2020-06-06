@@ -1,0 +1,14 @@
+name: Danger the PR
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Run Danger"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: danger/kotlin@0.5.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DANGER_KEY }}
