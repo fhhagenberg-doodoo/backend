@@ -95,9 +95,29 @@ jobs:
 - [https://medium.com/swlh/https-medium-com-jet-cabral-testing-spring-boot-restful-apis-b84ea031973d](https://medium.com/swlh/https-medium-com-jet-cabral-testing-spring-boot-restful-apis-b84ea031973d)
 
 ## Spring Boot Validation
+Are not working due to no supported in Kotlin!
+
 - [https://www.baeldung.com/spring-boot-bean-validation](https://www.baeldung.com/spring-boot-bean-validation)
 - [https://www.baeldung.com/spring-data-rest-validators](https://www.baeldung.com/spring-data-rest-validators)
 - [https://howtodoinjava.com/spring-restful/request-body-parameter-validation/](https://howtodoinjava.com/spring-restful/request-body-parameter-validation/)
 - [https://dzone.com/articles/implementing-validation-for-restful-services-with](https://dzone.com/articles/implementing-validation-for-restful-services-with)
 - [https://stackoverflow.com/questions/36515094/kotlin-and-valid-spring-annotation](https://stackoverflow.com/questions/36515094/kotlin-and-valid-spring-annotation)
 - [https://www.toptal.com/java/spring-boot-rest-api-error-handling](https://www.toptal.com/java/spring-boot-rest-api-error-handling)
+
+## Spring Boot Exception Handling
+- [https://www.baeldung.com/exception-handling-for-rest-with-spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)
+
+## Slack Webhook
+- [https://github.com/marketplace/actions/slack-notify](https://github.com/marketplace/actions/slack-notify)
+
+## Dockerfile
+- [https://thepracticaldeveloper.com/2017/12/11/dockerize-spring-boot/](https://thepracticaldeveloper.com/2017/12/11/dockerize-spring-boot/)
+- [https://www.callicoder.com/spring-boot-docker-example/](https://www.callicoder.com/spring-boot-docker-example/)
+
+## Heroku Slack Integration
+- [https://devcenter.heroku.com/articles/chatops#connecting-ci-and-other-pipeline-events-to-your-slack](https://devcenter.heroku.com/articles/chatops#connecting-ci-and-other-pipeline-events-to-your-slack)
+
+
+## Docker Build Push Image Github Actions
+- [https://github.com/docker/build-push-action](https://github.com/docker/build-push-action)
+- 
