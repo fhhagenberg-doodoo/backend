@@ -1,6 +1,6 @@
 # On every push we check if the current branch is able to be built
 
-name: Test Project And Report Code Coverage
+name: PR - Test and Code Cov erage
 
 on: pull_request
 
