@@ -1,7 +1,6 @@
-name: Deploy to docker hub
+name: Deploy to DockerHub
 
 on:
-  push:
   release:
     types:
       - created
