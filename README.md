@@ -113,6 +113,3 @@ Are not working due to no supported in Kotlin!
 ## Dockerfile
 - [https://thepracticaldeveloper.com/2017/12/11/dockerize-spring-boot/](https://thepracticaldeveloper.com/2017/12/11/dockerize-spring-boot/)
 - [https://www.callicoder.com/spring-boot-docker-example/](https://www.callicoder.com/spring-boot-docker-example/)
-
-## Heroku Slack Integration
-- [https://devcenter.heroku.com/articles/chatops#connecting-ci-and-other-pipeline-events-to-your-slack](https://devcenter.heroku.com/articles/chatops#connecting-ci-and-other-pipeline-events-to-your-slack)
