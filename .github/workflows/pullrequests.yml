@@ -1,6 +1,6 @@
 # On every push we check if the current branch is able to be built
 
-name: Test Project And Report Code Coverage
+name: PR - Test and Code Cov erage
 
 on: pull_request
 
@@ -29,16 +29,22 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Danger
+        uses: danger/kotlin@0.5.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.DANGER_KEY }}
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
+      - name: Lint Kotlin with Gradle
+        run: ./gradlew lintKotlin
       - name: Build with Gradle
         run: ./gradlew test
       - name: Upload coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
-        #uses: codecov/codecov-action@v1
-        #with:
-        #  token: ${{ secrets.CODECOV_TOKEN }}
-        #  file: ./coverage.xml
-        #  flags: unittests
-        #  name: codecov-umbrella
-        #  fail_ci_if_error: true
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: github-backend
+          SLACK_COLOR: '#3278BD'
