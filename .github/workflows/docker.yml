@@ -36,4 +36,4 @@ jobs:
 
       - name: Push to docker registry
         if: success()
-        run: docker push -t ${GITHUB_REPOSITORY}:latest
+        run: docker push ${GITHUB_REPOSITORY}:latest
