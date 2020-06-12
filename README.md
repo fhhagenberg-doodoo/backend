@@ -1,10 +1,10 @@
 <p align="center">
 
-    <a href="http://doodoo-frontend.herokuapp.com/">
+<a href="http://doodoo-frontend.herokuapp.com/">
 
-        <img alt="doodoo" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/pile-of-poo_1f4a9.png"></img>
+<img alt="doodoo" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/pile-of-poo_1f4a9.png"></img>
 
-    </a>
+</a>
 
 </p>
 
@@ -20,7 +20,7 @@
 
 <p align="center">
 
-    For when there's a shitload of work to do
+For when there's a shitload of work to do
 
 </p>
 
