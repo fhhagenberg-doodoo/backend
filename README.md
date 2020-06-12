@@ -1,32 +1,3 @@
-<p align="center">
-
-<a href="http://doodoo-frontend.herokuapp.com/">
-
-<img alt="doodoo" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/pile-of-poo_1f4a9.png"></img>
-
-</a>
-
-</p>
-
-
-
-<h3 align="center">
-
-  DooDoo
-
-</h3>
-
-
-
-<p align="center">
-
-For when there's a shitload of work to do
-
-</p>
-
-
-
-
 # Backend 
 
 ![Assemble Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble%20Project/badge.svg)  [![codecov](https://codecov.io/gh/fhhagenberg-doodoo/backend/branch/master/graph/badge.svg?token=STOG65KCML)](https://codecov.io/gh/fhhagenberg-doodoo/backend)  [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
