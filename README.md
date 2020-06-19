@@ -1,3 +1,57 @@
+
+# 💩 doodoo
+## when there’s a shit-load of work to do
+	
+
+### Team Members
+
+- Alexander Stelzhammer (S1810455024)
+- Manuel Leibetseder (S1810455012)
+
+###Introduction
+
+doodoo is the web-based to-do app that lets you manage your tasks in an easy and comfortable way. doodoo follows the KISS principle: keep it simple, stupid: A minimalistic user interface displays your tasks (or doos) from top to bottom. All doos are grouped and sorted by due date. One of the most important aspects of keeping track of your work is to estimate time. Because of this, the time it takes for one doo to be completed can be estimated based on dumps. One dump is the average amount of time spent on the toilet during a load-off.
+
+
+## Technical Background
+
+### Frontend
+The application’s frontend is implemented entirely using React[1] and TypeScript[2]. Basic unit tests for the frontend are written using the Jest[3] framework, E2E testing is done using Cypress[4]. To ensure consistent code quality across pull requests, the CI/CD pipeline will be configured to check linting rules using ESLint[5] and apply code formatting rules via Prettier[6]. The page will be automatically deployed to GitHub Pages[7].
+
+
+
+
+
+
+### Backend
+Using Spring Boot Framework[8] in combination with Kotlin [9]and the corresponding Coroutine framework to serve the data from the database to the frontend. Spring and Kotlin can be tested via Kotlin and Spring Boot dedicated testing frameworks.
+
+
+### Database
+Persisting the doo’s will be done with the help of PostgreSQL. A relational schema will be used to store the data of a user. Furthermore PostgreSQL configuration and scripts can be tested with Chef InSpec.
+
+
+### Deployment Abstraction
+To abstract the deployment of the individual services, Docker will be used with Dockerfiles for each of our implementations. Dockerfiles and a Docker-Compose configuration can be tested with Chef Inspec, to maintain deployability and for the ease of use.
+
+
+### CI/CD
+As no monorepo architecture is used, different CI/CD solutions will be tested for each repository.
+
+________________
+[1] https://reactjs.org/
+[2] https://www.typescriptlang.org/
+[3] https://jestjs.io/
+[4] https://www.cypress.io/
+[5] https://eslint.org/
+[6] https://prettier.io/
+[7] https://pages.github.com/
+[8] https://spring.io/projects/spring-boot
+[9] https://kotlinlang.org/
+
+
+
+
 # Backend 
 
 ![Assemble Project](https://github.com/fhhagenberg-doodoo/backend/workflows/Assemble%20Project/badge.svg)  [![codecov](https://codecov.io/gh/fhhagenberg-doodoo/backend/branch/master/graph/badge.svg?token=STOG65KCML)](https://codecov.io/gh/fhhagenberg-doodoo/backend)  [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
