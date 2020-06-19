@@ -8,7 +8,7 @@
 - Alexander Stelzhammer (S1810455024)
 - Manuel Leibetseder (S1810455012)
 
-###Introduction
+### Introduction
 
 doodoo is the web-based to-do app that lets you manage your tasks in an easy and comfortable way. doodoo follows the KISS principle: keep it simple, stupid: A minimalistic user interface displays your tasks (or doos) from top to bottom. All doos are grouped and sorted by due date. One of the most important aspects of keeping track of your work is to estimate time. Because of this, the time it takes for one doo to be completed can be estimated based on dumps. One dump is the average amount of time spent on the toilet during a load-off.
 
@@ -50,7 +50,8 @@ ________________
 [9] https://kotlinlang.org/
 
 
-
+***
+***
 
 # Backend 
 
